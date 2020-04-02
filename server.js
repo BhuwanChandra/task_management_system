@@ -25,6 +25,10 @@ app.use(router);
 app.use(express.json());
 app.use(cors());
 
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('/client/build'));
+}
+
 server.listen(PORT, () => {
     console.log(`server is running on port ${PORT}, visit http://localhost:${PORT}/`);
 })
