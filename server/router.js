@@ -16,6 +16,7 @@ router.get('/api/getTasks', (req, res) => {
 
 router.post('/api/addTask', (req, res) => {
     let task = req.body;
+    task.isNewTask = false;
     console.log(task);
     // console.log(req.body);
     

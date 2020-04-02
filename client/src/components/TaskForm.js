@@ -1,12 +1,14 @@
 import React from "react";
 
 export default function TaskForm(props) {
-  const handleCall = () => {
+  const handleCall = (e) => {
+    e.preventDefault();
     const task = props.task;
     props.task.isNewTask ? props.addTask(task) : props.updateTask(task);
   };
   return (
     <div className="add-task">
+    <form>
       <div className="form-group">
         <label>Title:</label>
         <input
@@ -16,6 +18,7 @@ export default function TaskForm(props) {
           name="title"
           onChange={props.handleChange}
           placeholder="Title of the task"
+          required={true}
         />
       </div>
       <div className="form-group">
@@ -38,11 +41,13 @@ export default function TaskForm(props) {
           name="priority"
           onChange={props.handleChange}
           placeholder="Set priority of the task"
+          pattern="[1-9][0-9]+"
         />
       </div>
-      <button className="btn btn-info mb-2" onClick={e => handleCall()}>
+      <button type="submit" className="btn btn-info mb-2" onClick={e => handleCall(e)}>
         {props.task.isNewTask ? "Add Task" : "Update Task"}
       </button>
+      </form>
     </div>
   );
 }
