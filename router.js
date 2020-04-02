@@ -1,9 +1,10 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 let Task = require('./taskModel');
 
 router.get('/', (req, res) => {
-    res.send("<h2>server is up and running</h2>");
+    res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
 router.get('/api/getTasks', (req, res) => {
