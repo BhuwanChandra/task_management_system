@@ -16,7 +16,7 @@ Express - NodeJS Framework<br />
 
 ## Build Setup
 
-In the home directory `task_management_system/server` and `task_management_system/client`,</br> 
+In the home directory `task_management_system/` and `task_management_system/client`,</br> 
 run this command to install server and client dependencies respectively:
 
 ### `npm install`
@@ -27,7 +27,7 @@ In order to run the application:
 
 Runs the app in the development mode.<br />
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 ### `npm test`
 
